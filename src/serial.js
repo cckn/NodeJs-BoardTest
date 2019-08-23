@@ -5,5 +5,5 @@ const serial = () => {}
 export default serial
 
 if (require.main === module) {
-    fnName()
+    serial()
 }
