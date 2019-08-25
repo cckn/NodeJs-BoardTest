@@ -19,6 +19,8 @@
     "scripts": {
         "start": "babel-node index.js",
         "dev": "nodemon --exec babel-node index.js --delay 1",
+        "gpio": "nodemon --exec babel-node src/gpio.js --delay 1",
+        "serial": "nodemon --exec babel-node src/serial.js --delay 1",
         "test": "echo \"Error: no test specified\" && exit 1"
     }
 }
