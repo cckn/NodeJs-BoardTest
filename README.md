@@ -3,10 +3,11 @@
 ## Spec 
 
 - Raspberry Pi Compute Module 3+ 
+- [Raspbian Buster Lite](https://www.raspberrypi.org/downloads/raspbian/)
 
 
 ## Requirement 
-- Node.js 
+- [Node.js](https://nodejs.org/ko/)
 - Npm or Yarn (Package manager)
 
 
