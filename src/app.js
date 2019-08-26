@@ -1,22 +1,34 @@
-import * as serial from './serial'
-import * as leds from './leds'
+import * as Serial from './serial'
+import * as Led from './leds'
 
 const app = () => {
     init()
-    toggleLeds()
-    serial.write(serial.interfaces.rs485a, 'test?')
+
+    setInterval(() => {
+        toggleLeds()
+    }, 1000)
+
+    let count = 0
+    setInterval(() => {
+        rs485Test(count++)
+    }, 10)
 }
 const init = () => {
-    serial.init()
+    Serial.init()
 }
 
 const toggleLeds = () => {
-    setInterval(() => {
-        leds.interfaceKeys.forEach(ledName => {
-            const led = leds.interfaces[ledName]
-            leds.toggle(led)
-        })
-    }, 300)
-    console.log('Hello!')
+    Led.interfaceKeys.forEach(key => {
+        const led = Led.interfaces[key]
+        Led.toggle(led)
+    })
 }
+
+const rs485Test = count => {
+    Serial.interfaceKeys.forEach(key => {
+        const serial = Serial.interfaces[key]
+        serial.write(`${key} :: ${count}\n`)
+    })
+}
+
 export default app

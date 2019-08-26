@@ -17,7 +17,7 @@ const init = () => {
         serial.on('open', line => console.log(`${key} open`))
 
         parser.on('data', line => console.log(`> ${key} :// ${line}`))
-        serial.write('ROBOT POWER ON\n')
+        serial.write(`${key} Connect \n`)
     })
 }
 
