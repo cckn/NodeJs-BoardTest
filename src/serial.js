@@ -4,7 +4,7 @@ import Readline from '@serialport/parser-readline'
 const interfaces = {
     rs485a: new SerialPort('/dev/ttyUSB0', { baudRate: 9600 }),
     rs485b: new SerialPort('/dev/ttyUSB1', { baudRate: 9600 }),
-    rs485c: new SerialPort('/dev/ttyUSB2', { baudRate: 9600 }),
+    rs485c: new SerialPort('/dev/serial0', { baudRate: 9600 }),
     dbg: new SerialPort('/dev/ttyUSB3', { baudRate: 9600 }),
 }
 const interfaceKeys = Object.keys(interfaces)
